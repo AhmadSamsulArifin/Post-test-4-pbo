@@ -377,6 +377,9 @@ Abstraction adalah konsep dalam object-oriented programming (OOP) yang bertujuan
 2. Interface: berisi kumpulan method abstrak yang harus diimplementasikan oleh class yang menggunakannya.
 
 
+
+
+
 1. Abstract Class
 Abstract Class adalah class yang tidak bisa dibuat objek secara langsung, tetapi bisa diwariskan ke class lain. Di dalamnya bisa ada method abstrak (tanpa isi) dan method biasa.
 
@@ -391,6 +394,8 @@ Abstract Class adalah class yang tidak bisa dibuat objek secara langsung, tetapi
 
 
 Gambar diatas menunjekkan ruangan adalah abstract class yang ditandai dengan adanya keyword abstract. Di dalamnya terdapat method abstrak tanpa body yaitu inforuangan(). class laboratorium dan class kamar inap mewarisi class ruangan dan wajib mengimplementasikan method inforuangan().
+
+
 
 
 2. Interface
@@ -415,6 +420,8 @@ Polymorphism berasal dari bahasa Yunani, yaitu poly (banyak) dan morph (bentuk).
 2. Overriding: method di subclass menimpa method dari superclass dengan perilaku berbeda.
 
 
+
+
 1. Overloading
 Overloading adalah kemampuan dalam OOP yang memungkinkan suatu class memiliki beberapa method dengan nama yang sama, namun dibedakan berdasarkan:
 ▪ Jumlah parameter
@@ -427,6 +434,9 @@ Overloading adalah kemampuan dalam OOP yang memungkinkan suatu class memiliki be
 
 
 class Ruangan service memiliki dua method dengan nama sama, yaitu cari ruangan. Method pertama mencari dengan tipe data parameter string nomor. Method kedua mencari dengan tipe data parameter string tipe dan boolean bytipe . Inilah contoh overloading, yaitu satu nama method dengan tipe data parameter berbeda.
+
+
+
 
 
 2. Overriding
@@ -517,5 +527,6 @@ Program ini memiliki 7 menu
 8. Tampilan setelah menu keluar adalah penerapan Overriding
 
 
-<img width="1022" height="168" alt="image" src="https://github.com/user-attachments/assets/6101237e-508b-4023-922f-9b8d2df33d1e" />
+<img width="1060" height="243" alt="image" src="https://github.com/user-attachments/assets/db618dde-750a-4f5f-9cf4-97b8794398b5" />
+
 
