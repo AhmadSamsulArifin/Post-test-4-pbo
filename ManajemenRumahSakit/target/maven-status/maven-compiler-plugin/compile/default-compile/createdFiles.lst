@@ -1,7 +1,0 @@
-model\RuanganKelas.class
-model\Reservasi.class
-service\RuanganService.class
-model\KamarInap.class
-main\Main.class
-model\Laboratorium.class
-model\Ruangan.class
