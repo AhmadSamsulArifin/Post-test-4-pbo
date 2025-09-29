@@ -369,21 +369,153 @@ Program ini memiliki 7 menu
 
 
 
+## Post test 4 pbo
+
+## Abstraction 
+Abstraction adalah konsep dalam object-oriented programming (OOP) yang bertujuan untuk menyederhanakan kompleksitas sistem dengan menyembunyikan detail-detail teknis yang tidak perlu. Dalam java abstraction dapat dilakukan dengan:
+1. Abstract Class: class yang tidak bisa dibuat objek secara langsung, tetapi bisa diwariskan ke class lain. Di dalamnya bisa ada method abstrak (tanpa isi) dan method biasa.
+2. Interface: berisi kumpulan method abstrak yang harus diimplementasikan oleh class yang menggunakannya.
+
+
+1. Abstract Class
+Abstract Class adalah class yang tidak bisa dibuat objek secara langsung, tetapi bisa diwariskan ke class lain. Di dalamnya bisa ada method abstrak (tanpa isi) dan method biasa.
+
+
+<img width="1078" height="625" alt="image" src="https://github.com/user-attachments/assets/3e5a2eb5-42dc-4abb-a92a-64dfb7c2390b" />
+
+
+<img width="1095" height="623" alt="image" src="https://github.com/user-attachments/assets/783ab4e7-5224-419b-b3df-74ee20c4d804" />
+
+
+<img width="1091" height="593" alt="image" src="https://github.com/user-attachments/assets/4a3f3089-d8f2-46ee-98d8-e617ee52dce9" />
+
+
+Gambar diatas menunjekkan ruangan adalah abstract class yang ditandai dengan adanya keyword abstract. Di dalamnya terdapat method abstrak tanpa body yaitu inforuangan(). class laboratorium dan class kamar inap mewarisi class ruangan dan wajib mengimplementasikan method inforuangan().
+
+
+2. Interface
+Interface adalah sebuah kontrak atau kerangka kerja dalam OOP yang hanya berisi deklarasi method (tanpa implementasi). Setiap class yang mengimplementasikan interface wajib mendefinisikan semua method yang ada di dalamnya. Berbeda dengan abstract class, interface tidak memiliki implementasi method, dan sebuah class dapat mengimplementasikan lebih dari satu interface sekaligus.
+
+
+<img width="1088" height="578" alt="image" src="https://github.com/user-attachments/assets/819c634b-fe1e-48d9-aa43-eae99c834a1b" />
+
+
+<img width="1077" height="592" alt="image" src="https://github.com/user-attachments/assets/9b994b4f-83b7-408f-8957-d799f0303eaf" />
+
+
+<img width="1093" height="603" alt="image" src="https://github.com/user-attachments/assets/e07e13d4-20ba-4b3c-8a2b-1410e8966ad0" />
+
+
+Gambar diatas menunjukkan reservasi adalah interface yang hanya bisa mendefinisikan method pesan() dan batalkan() tanpa implementasi. class kamar inap dan laboratorium mengimplementasikan interface reservasi dan wajib memberikan implementasi dari kedua method yang ada.
+
+
+## Polymorphism 
+Polymorphism berasal dari bahasa Yunani, yaitu poly (banyak) dan morph (bentuk). Dalam OOP, polymorphism adalah kemampuan suatu method dengan nama yang sama untuk memiliki lebih dari satu perilaku atau kegunaan. Polymorphism dibagi menjadi dua bentuk:
+1. Overloading: method dengan nama sama tapi berbeda parameter/tipe data.
+2. Overriding: method di subclass menimpa method dari superclass dengan perilaku berbeda.
+
+
+1. Overloading
+Overloading adalah kemampuan dalam OOP yang memungkinkan suatu class memiliki beberapa method dengan nama yang sama, namun dibedakan berdasarkan:
+▪ Jumlah parameter
+▪ Tipe data parameter
+▪ Urutan parameter
+
+
+<img width="1094" height="475" alt="image" src="https://github.com/user-attachments/assets/3684ab97-56c2-46a5-8955-c45628b6626d" />
 
 
 
+class Ruangan service memiliki dua method dengan nama sama, yaitu cari ruangan. Method pertama mencari dengan tipe data parameter string nomor. Method kedua mencari dengan tipe data parameter string tipe dan boolean bytipe . Inilah contoh overloading, yaitu satu nama method dengan tipe data parameter berbeda.
+
+
+2. Overriding
+Overriding adalah kemampuan subclass untuk menimpa (override) method yang sudah ada di superclass dengan implementasi yang berbeda. Ciri-cirinya:
+▪ Nama method sama
+▪ Parameter sama
+
+
+<img width="1366" height="768" alt="image" src="https://github.com/user-attachments/assets/587a6471-536e-42fb-be4f-a31d10800cc7" />
+
+
+<img width="1078" height="639" alt="image" src="https://github.com/user-attachments/assets/1e226e6c-af53-42cd-9cbf-c77050e8a564" />
+
+
+<img width="1093" height="565" alt="image" src="https://github.com/user-attachments/assets/3e23a11f-8afa-4af3-87f8-3c8d98d4cd4e" />
+
+
+<img width="1076" height="257" alt="image" src="https://github.com/user-attachments/assets/d4c74dec-c76c-4075-903c-45fade7058d5" />
+
+
+Dalam program manajemen rumah sakit ini, penerapan overriding terlihat pada class kamar inap dan laboratorium yang merupakan subclass dari ruangan. Kedua class tersebut melakukan overriding terhadap method abstrak Inforuangan() dari superclass ruangan. Walaupun nama method sama, isi implementasinya berbeda sesuai dengan jenis ruangan. Pada kamar inap, method ini menambahkan informasi tentang nomor,tipe, dan status sedangkan pada Ikan, method ini menambahkan informasi sama tapi dengan no ruangan itu berbeda k1 dan l1, tipe nya sendiri juga berbeda,dan statusnya juga bisa berbeda asal kita ubah antara kosong atau terisi. Dengan demikian, ketika method Inforuangan() dipanggil melalui objek kamar inap atau laboratorium, hasil keluaran menyesuaikan dengan implementasi masing-masing subclass.
+
+
+## Nilai tambah
+
+
+Kombinasi abstract class dan interface digunakan secara bersamaan pada class laboratorium dan kamar inap. Kedua class ini mewarisi sifat umum dari abstract class ruangan sekaligus mengimplementasikan interface reservasi. Dengan cara ini, kamar inap dan laboratorium tidak hanya memiliki struktur dasar yang sama seperti atribut nomor,tipe, dan status dari ruangan, tetapi juga dipaksa untuk memberikan implementasi khusus terhadap aturan reservasi yang ditetapkan di interface reservasi.
+
+
+<img width="1102" height="579" alt="image" src="https://github.com/user-attachments/assets/cffb3c8e-8f21-409d-9d4d-8eff398fa057" />
+
+
+<img width="1103" height="639" alt="image" src="https://github.com/user-attachments/assets/ed380689-a657-4cb0-9c33-c208f94a0b60" />
 
 
 
+## Alur Program
+
+Program ini memiliki 7 menu 
+
+
+<img width="1016" height="243" alt="image" src="https://github.com/user-attachments/assets/4436b521-0609-43a5-be82-ec4c09a62864" />
+
+
+1. menu pertama yaitu menambah data, pada bagian ini user bakal diminta untuk mengisi data data seperti nomor ruangan,tipe ruangan, dan status.
+
+
+<img width="977" height="229" alt="image" src="https://github.com/user-attachments/assets/87638fbb-dc61-428c-9b36-f39418e74f29" />
+
+
+2. menu kedua yaitu menampilkan semua ruangan, dimenu ini program bakal menampilkan semua ruangan yang sudah di tambahkan.
+
+
+<img width="973" height="187" alt="image" src="https://github.com/user-attachments/assets/e43b31b7-54a1-4a4e-a72e-82fc8ac0bf3e" />
+
+
+3. menu ketiga yaitu mengupdate atau mengubah data, jadi pada menu ini user memilih mana yang akan diubah datanya.
+
+
+<img width="965" height="238" alt="image" src="https://github.com/user-attachments/assets/536f8f17-0a7e-4cc7-a288-22256863a4ba" />
+
+
+4. menu keempat yaitu menghapus ruangan, jadi dimenu ini user dapat menghapus data dengan memilih nomor yang ingin dihapus.
+
+
+<img width="982" height="206" alt="image" src="https://github.com/user-attachments/assets/580a0c35-7f0f-4e41-99ae-9957628fc633" />
+
+
+5. menu kelima yaitu mencari ruangan bedasarkan nomor, jadi dimenu ini user harus memasukkan nomor mana yang ingin di cari
+
+
+<img width="580" height="211" alt="image" src="https://github.com/user-attachments/assets/e18bfac2-02f7-4937-9e99-fb6ee716ce1c" />
+
+
+6. menu keenam yaitu mencari ruangan bedasarkan tipe, jadi dimenu ini user harus memasukkan tipe ruangan apa yang ingin di cari
+
+
+<img width="971" height="197" alt="image" src="https://github.com/user-attachments/assets/4498f69a-5167-4799-8fe8-11174d374c0c" />
+
+
+7. menu ketujuh yaitu keluar dari program
+
+
+<img width="975" height="289" alt="image" src="https://github.com/user-attachments/assets/dc8b1d98-67c0-4220-9274-e89e21009658" />
 
 
 
+8. Tampilan setelah menu keluar adalah penerapan Overriding
 
 
-
-
-
-
-
-
+<img width="1022" height="168" alt="image" src="https://github.com/user-attachments/assets/6101237e-508b-4023-922f-9b8d2df33d1e" />
 
